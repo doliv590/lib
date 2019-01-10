@@ -1,61 +1,31 @@
-
-puts "c'est quoi ton nom ?"
-login = gets.chomp
-def ask_login(login)
-ask_login(login)
+def signup
+	puts "#chuchote moi ton mot de passe"
+	mdp = gets.chomp
+	return mdp
 end
 
-puts "encore !"
-signup = gets.chomp
-def try_signup(signup)
-try_signup(signup)
+def login(mdp)
+	puts "J'AI PAS ENTENDU!!"
+	mdp2 = 0
+	while mdp2 != mdp
+		mdp2 = gets.chomp
+		if mdp == mdp2
+			return nil
+		end
+		puts "PAS ENTENDU!!"
+	end
 end
 
-def welldone(bravo)
-	bravo = "bah voilà, TMTC!"
+def welcome_screen
+	puts "Tu croiyais que j'allais de dire quoi ?"
+	puts "venez boire de la vrai biere chez nous !!"
+	puts "GROUPE_THP_LILLE"
 end
 
-def machin 	
- while ask_login != try_signup 
-	  ask_login(login) end
-		if login == signup
-		 welldone(bravo) end 
-
-
-
-
-#
-#def ask_signup(signup)
-#	puts"Mon ami, si tu veux découvrir un secret, donne moi ton nom"
-#	signup = gets.chomp
-#end
-
-
-def try_login(login)
-	puts"Mon ami, écris à nouveau ton nom, si tu t'en rappelles alors je te dis un vrai secret, sinon... tu essaies à nouveau."
-	login = gets.chomp
+def perform
+	mdp = signup
+	login(mdp)
+	welcome_screen
 end
 
-
-
-#machin2(login, signup)
-#end
-
-#def machin2(truk, bidul)
-#puts truk
-#puts bidul
-#while login != signup 
-#	ask_login
-#		if login == signup
-#		 welcomescreen
-#end
-
-
-
-
-#def welcomescreen(bravo)
-#	puts "Mais tu croyais vraaaaiment que j'allais te dire un truc cool ?"
-#end
-#a = 1
-#b = 5
-#machin(a, b)
+perform
